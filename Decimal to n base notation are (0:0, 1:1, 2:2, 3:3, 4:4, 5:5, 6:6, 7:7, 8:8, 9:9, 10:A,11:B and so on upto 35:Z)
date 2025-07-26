@@ -1,0 +1,28 @@
+n = int(input("Enter base (2-36): "))
+num = int(input("Enter decimal number: "))
+
+if n < 2 or n > 36:
+    print("Base must be between 2 and 36")
+    exit()
+
+if num == 0:
+    print("0")
+    exit()
+
+reminder = []
+quotient = num
+while quotient > 0:
+    remainder = quotient % n
+    reminder.append(remainder)
+    quotient = quotient // n
+
+reminder = reminder[::-1]  # Reverse the digits
+
+equivalent = ''
+for i in reminder:
+    if i < 10:
+        equivalent += str(i)
+    else:
+        equivalent += chr(55 + i)  # 10 → A, 11 → B, ..., 35 → Z
+
+print(equivalent)
