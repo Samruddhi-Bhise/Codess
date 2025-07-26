@@ -1,0 +1,25 @@
+def NumberOfCarries(n1, n2):
+    # Pad the shorter string with leading zeros so both have equal length
+    n1 = n1.zfill(max(len(n1), len(n2)))
+    n2 = n2.zfill(max(len(n1), len(n2)))
+
+    count = 0  # Initialize carry count
+    carry = 0  # Initialize carry flag (0 or 1)
+
+    # Loop over digits from right to left using reversed strings
+    for d1, d2 in zip(reversed(n1), reversed(n2)):
+        # Convert characters to integers and add along with carry
+        if int(d1) + int(d2) + carry > 9:
+            count += 1  # Increment carry count if sum > 9
+            carry = 1   # Set carry for next iteration
+        else:
+            carry = 0   # Reset carry if sum ≤ 9
+
+    return count  # Return total number of carries
+
+# Read two numbers as strings from input
+n1 = input()
+n2 = input()
+
+# Print the number of carries during addition
+print(NumberOfCarries(n1, n2))
