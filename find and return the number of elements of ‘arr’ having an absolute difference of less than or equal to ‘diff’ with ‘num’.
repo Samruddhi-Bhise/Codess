@@ -1,0 +1,14 @@
+def findCount(n, arr, num, diff):
+    count = 0
+    for i in range(n):
+        if abs(arr[i] - num) <= diff:
+            count += 1
+    if count:
+        return count
+    return -1
+# Input handling
+n = int(input())  # Length of array
+arr = list(map(int, input().split()))  # Array elements
+num = int(input())  # Target number
+diff = int(input())  # Allowed difference
+print(findCount(n, arr, num, diff)) 
