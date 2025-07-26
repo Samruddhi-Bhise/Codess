@@ -1,0 +1,40 @@
+def MoveHyphen(s, n):
+    if n == 0:
+        return None
+    
+    hyphens = ""
+    others = ""
+    
+    for i in s:
+        if i == '-':
+            hyphens += '-'
+        else:
+            others += i
+            
+    return hyphens + others
+
+# Input
+s = input("Enter a string: ")
+n = len(s)
+
+# Output
+print(MoveHyphen(s, n))
+
+
+
+
+#method 2
+inp = input()
+count = 0
+final = ""
+for i in inp:
+    if i == '-':
+        count+=1
+    else:
+        final+=i
+print("-"*count,final)
+
+
+Output:
+move-hyphens-to-front
+--- movehyphenstofront
