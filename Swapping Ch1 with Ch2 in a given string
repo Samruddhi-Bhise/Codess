@@ -1,0 +1,48 @@
+def ReplaceCharacter(s, n, ch1, ch2):
+    # Return None if string is None
+    if s is None:
+        return None
+
+    # If ch1 and ch2 are the same, or neither are in the string, return the original string
+    if ch1 == ch2 or (ch1 not in s and ch2 not in s):
+        return s
+
+    # Convert string to list to allow character swapping
+    result = []
+    for c in s:
+        if c == ch1:
+            result.append(ch2)
+        elif c == ch2:
+            result.append(ch1)
+        else:
+            result.append(c)
+    
+    # Join the list back into a string
+    return ''.join(result)
+
+# Example usage:
+s = input("Enter the string: ")
+ch1 = input("Enter ch1: ")
+ch2 = input("Enter ch2: ")
+n = len(s)
+
+output = ReplaceCharacter(s, n, ch1, ch2)
+print("Output:", output)
+
+
+##########################################################
+chars = ['H', 'e', 'l', 'l', 'o']
+word = ''.join(chars)
+print(word)  # Output: Hello
+
+############################################################
+'-'.join(chars)  # Output: H-e-l-l-o
+
+
+
+
+
+
+
+
+
