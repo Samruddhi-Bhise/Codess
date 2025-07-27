@@ -1,0 +1,20 @@
+arr = []
+even_arr = []
+odd_arr = []
+
+n=int(input("Enter the size of the array"))
+for i in range (0, n):
+    number = int(input("Enter Element at {} index:".format(i)))
+    arr.append(number)
+    if i % 2 == 0:
+        even_arr.append(arr[i])
+    else:
+        odd_arr.append(arr[i])
+even_arr=sorted(even_arr)
+evenStr = ' '.join(map(str, even_arr))    //for printing the array in string format
+print("Sorted Even Array : ", evenStr)
+
+odd_arr=sorted(odd_arr)
+oddStr = ' '.join(map(str, odd_arr))         //for printing the array in string format
+print("Sorted Odd Array : ", oddStr)          
+print(even_arr[len(even_arr)-2] + odd_arr[len(odd_arr)-2])
