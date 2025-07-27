@@ -1,0 +1,17 @@
+def is_palindrome(num):
+    return str(num) == str(num)[::-1]
+
+# Input from user
+lower = int(input("Enter lower limit: "))
+upper = int(input("Enter upper limit: "))
+
+# Initialize an empty list to hold palindrome numbers
+palindromes = []
+
+# Loop through the range and collect palindromes
+for i in range(lower, upper + 1):
+    if is_palindrome(i):
+        palindromes.append(str(i))  # Convert to string for clean output formatting
+
+# Join the palindromes with comma and space, then print
+print(" , ".join(palindromes) + ".")
