@@ -1,0 +1,20 @@
+import math
+
+# Coordinates of the three points
+x1, y1 = 1, 1
+x2, y2 = 2, 4
+x3, y3 = 3, 6
+
+# Function to calculate distance between two points
+def distance(xa, ya, xb, yb):
+    return math.sqrt((xb - xa) ** 2 + (yb - ya) ** 2)
+
+# Calculate distances
+d1 = distance(x1, y1, x2, y2)
+d2 = distance(x2, y2, x3, y3)
+d3 = distance(x3, y3, x1, y1)
+
+# Total distance
+total_distance = d1 + d2 + d3
+
+print("Total Distance:", total_distance)
