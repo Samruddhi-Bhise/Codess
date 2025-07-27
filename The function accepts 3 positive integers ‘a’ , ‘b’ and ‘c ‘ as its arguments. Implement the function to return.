@@ -1,0 +1,14 @@
+def OperationChoices(a, b, c):
+    result = 0
+    if c == 1:
+        result = a + b   //or you can directly return the value
+    elif c == 2:
+        result = a - b
+    elif c == 3:
+        result = a * b
+    elif c == 4:
+        result = a // b
+    return result
+    
+c,a,b= map(int, input().split())
+print(OperationChoices(a, b, c))
