@@ -1,0 +1,21 @@
+def FindAutoCount(n):
+    if n is None:
+        return 0
+
+    if not n.isdigit():
+        return 0
+
+    length = len(n)
+    count = [0] * 10  # to store frequency of digits 0-9
+
+    # Count occurrences of each digit in n
+    for digit in n:
+        count[int(digit)] += 1
+
+    # Check if n is an autobiographical number
+    for i in range(length):
+        if int(n[i]) != count[i]:
+            return 0
+
+    # Count and return number of distinct digits in n
+    return len(set(n))
