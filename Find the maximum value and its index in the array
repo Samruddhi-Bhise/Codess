@@ -1,0 +1,16 @@
+def MaxInArray(arr, n):
+    max_value = arr[0]
+    max_index = 0
+
+    for i in range(1, n):
+        if arr[i] > max_value:
+            max_value = arr[i]
+            max_index = i
+
+    print(max_value)
+    print(max_index)
+
+# Input handling
+n = int(input())  # Number of elements
+arr = list(map(int, input().split()))  # List of integers
+MaxInArray(arr, n)
